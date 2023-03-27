@@ -25,7 +25,7 @@ void signal_handler(int sig, siginfo_t *siginfo, void *context)
     }
 
     ucontext_t *ucontext = (ucontext_t *)context;
-    printf("State of the context: RIP = 0x%llx, RAX = 0x%llx, RBX = 0x%llx\n", ucontext->uc_mcontext.gregs[REG_RIP], ucontext->uc_mcontext.gregs[REG_RAX], ucontext->uc_mcontext.gregs[REG_RBX]);
+    printf("State of the context: EIP = 0x%llx, EAX = 0x%llx, EBX = 0x%llx\n", ucontext->uc_mcontext.gregs[REG_EIP], ucontext->uc_mcontext.gregs[REG_EAX], ucontext->uc_mcontext.gregs[REG_EBX]);
 }
 
 int main()
